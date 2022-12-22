@@ -6,8 +6,10 @@ import {
 } from "wagmi";
 import ABI from "./abis/ABI.json";
 
-import Profile from "./Profile";
 import { ethers } from "ethers";
+
+import Profile from "./Profile";
+import AccountDetail from "./Account";
 
 function App() {
   const { address, isConnected } = useAccount();
@@ -37,9 +39,11 @@ function App() {
       <header className="App-header">
         <div>
           <Profile />
+          <hr />
+          <AccountDetail />
         </div>
 
-        <button disabled={!write} onClick={() => write?.()}>
+        {/* <button disabled={!write} onClick={() => write?.()}>
           Open Position{whiteIsLoading ? "...." : null}
         </button>
 
@@ -53,7 +57,7 @@ function App() {
                 <hr />
               </div>
             ))}
-        </div>
+        </div> */}
       </header>
     </div>
   );
